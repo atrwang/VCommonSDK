@@ -22,6 +22,7 @@
 		870EDE8118AF081F00F1A5F2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 870EDE7F18AF081F00F1A5F2 /* InfoPlist.strings */; };
 		870EDE8318AF081F00F1A5F2 /* VCommonSDKDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 870EDE8218AF081F00F1A5F2 /* VCommonSDKDemoTests.m */; };
 		870EDED418AF0EB200F1A5F2 /* libVCommonSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 870EDEC418AF0A9F00F1A5F2 /* libVCommonSDK.a */; };
+		870EDED618AF0EFA00F1A5F2 /* ReadMe.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 870EDED518AF0EFA00F1A5F2 /* ReadMe.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		870EDE8018AF081F00F1A5F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		870EDE8218AF081F00F1A5F2 /* VCommonSDKDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCommonSDKDemoTests.m; sourceTree = "<group>"; };
 		870EDEBE18AF0A9F00F1A5F2 /* VCommonSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = VCommonSDK.xcodeproj; path = ../VCommonSDK/VCommonSDK.xcodeproj; sourceTree = "<group>"; };
+		870EDED518AF0EFA00F1A5F2 /* ReadMe.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = ReadMe.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 		870EDE4B18AF081F00F1A5F2 = {
 			isa = PBXGroup;
 			children = (
+				870EDED518AF0EFA00F1A5F2 /* ReadMe.rtf */,
 				870EDE5D18AF081F00F1A5F2 /* VCommonSDKDemo */,
 				870EDE7C18AF081F00F1A5F2 /* VCommonSDKDemoTests */,
 				870EDE5618AF081F00F1A5F2 /* Frameworks */,
@@ -289,6 +292,7 @@
 			files = (
 				870EDE7018AF081F00F1A5F2 /* Images.xcassets in Resources */,
 				870EDE6218AF081F00F1A5F2 /* InfoPlist.strings in Resources */,
+				870EDED618AF0EFA00F1A5F2 /* ReadMe.rtf in Resources */,
 				870EDE6B18AF081F00F1A5F2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
