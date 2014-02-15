@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--View Controller - Demos-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="VViewController" sceneMemberID="viewController">
@@ -15,13 +15,88 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DmE-x6-y42">
+                                <rect key="frame" x="0.0" y="63" width="768" height="961"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="v1J-hU-Fmw"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="3W3-fL-94m"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DmE-x6-y42" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Sq0-AP-beT"/>
+                            <constraint firstAttribute="trailing" secondItem="DmE-x6-y42" secondAttribute="trailing" id="UOV-9u-dLS"/>
+                            <constraint firstItem="rhw-GO-NQz" firstAttribute="top" secondItem="DmE-x6-y42" secondAttribute="bottom" id="ael-aG-5uN"/>
+                            <constraint firstItem="DmE-x6-y42" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="m9L-ZQ-CCh"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="wDi-QO-oL6"/>
+                    <navigationItem key="navigationItem" title="Demos" id="wDi-QO-oL6"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <segue destination="qDn-ib-DvW" kind="push" identifier="pushToVProgressHUD" id="tx5-dF-sPj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1707" y="-263"/>
+            <point key="canvasLocation" x="2015" y="-499"/>
+        </scene>
+        <!--ProgressHUD View Controller -  VProgressHUD-->
+        <scene sceneID="Oig-wP-VBC">
+            <objects>
+                <viewController id="qDn-ib-DvW" customClass="VProgressHUDViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="baz-4C-hMD"/>
+                        <viewControllerLayoutGuide type="bottom" id="Icy-QR-q1d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qpF-Yt-HFl">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFG-gY-2sP">
+                                <rect key="frame" x="20" y="92" width="576" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Show Common     : showMsg:(NSString*)message dismissAfterDelay:(CGFloat)delay">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showCommon:" destination="qDn-ib-DvW" eventType="touchUpInside" id="EFG-Ey-ky3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWc-di-xpW">
+                                <rect key="frame" x="20" y="142" width="854" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Show      : - (void)show:(NSString*)message withMaskType:(VProgressHUDMaskType)mask dismissAfterDelay:(CGFloat)delay">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="show:" destination="qDn-ib-DvW" eventType="touchUpInside" id="Os0-Ya-eP3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KdM-zf-1Ln">
+                                <rect key="frame" x="20" y="201" width="1027" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <state key="normal">
+                                    <string key="title">ShowWitImage      (void)showMsg:(NSString*)message image:(UIImage*)image withMaskType:(VProgressHUDMaskType)mask dismissAfterDelay:(CGFloat)delay</string>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showWithImage" destination="qDn-ib-DvW" eventType="touchUpInside" id="hgk-nj-4a2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title=" VProgressHUD" id="JlN-kU-RjL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y41-J0-94f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3096" y="-888"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0Ae-ZH-PzW">

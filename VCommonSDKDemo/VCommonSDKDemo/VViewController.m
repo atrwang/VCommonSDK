@@ -8,7 +8,7 @@
 
 #import "VViewController.h"
 
-@interface VViewController ()
+@interface VViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @end
 
@@ -30,6 +30,67 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+#pragma mark - UITableViewDataSource & UITableViewDataDelegate
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+    }
+    
+    [self configureCell:cell forRowAtIndexPath:indexPath];
+    
+    return cell;
+}
+
+- (void)configureCell:(UITableViewCell *)cell
+    forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.row) {
+        case 0: //VProgressHUD
+        {
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            cell.textLabel.text = @"VProgressHUD";
+        }
+            break;
+            
+        default:
+            break;
+    }
+}
+
+
+
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.row) {
+        case 0://VProgressHUD
+        {
+            [tableView deselectRowAtIndexPath:indexPath animated:YES];
+            [self performSegueWithIdentifier:@"pushToVProgressHUD" sender:self];
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 
 @end

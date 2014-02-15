@@ -16,6 +16,9 @@
 		870EDEB318AF096700F1A5F2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 870EDEB118AF096700F1A5F2 /* InfoPlist.strings */; };
 		870EDEB518AF096700F1A5F2 /* VCommonSDKTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 870EDEB418AF096700F1A5F2 /* VCommonSDKTests.m */; };
 		870EDECA18AF0B9200F1A5F2 /* NSString+VExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 870EDEC918AF0B9200F1A5F2 /* NSString+VExtension.m */; };
+		870EDEDF18AF12CC00F1A5F2 /* VProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 870EDEDE18AF12CC00F1A5F2 /* VProgressHUD.m */; };
+		870EDEE118AF141100F1A5F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870EDEE018AF141100F1A5F2 /* UIKit.framework */; };
+		870EDEE318AF141700F1A5F2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870EDEE218AF141700F1A5F2 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,10 @@
 		870EDEB418AF096700F1A5F2 /* VCommonSDKTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCommonSDKTests.m; sourceTree = "<group>"; };
 		870EDEC818AF0B9200F1A5F2 /* NSString+VExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+VExtension.h"; sourceTree = "<group>"; };
 		870EDEC918AF0B9200F1A5F2 /* NSString+VExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+VExtension.m"; sourceTree = "<group>"; };
+		870EDEDD18AF12CC00F1A5F2 /* VProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VProgressHUD.h; sourceTree = "<group>"; };
+		870EDEDE18AF12CC00F1A5F2 /* VProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VProgressHUD.m; sourceTree = "<group>"; };
+		870EDEE018AF141100F1A5F2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		870EDEE218AF141700F1A5F2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				870EDEE318AF141700F1A5F2 /* QuartzCore.framework in Frameworks */,
+				870EDEE118AF141100F1A5F2 /* UIKit.framework in Frameworks */,
 				870EDE9918AF096700F1A5F2 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,6 +111,8 @@
 		870EDE9718AF096700F1A5F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				870EDEE218AF141700F1A5F2 /* QuartzCore.framework */,
+				870EDEE018AF141100F1A5F2 /* UIKit.framework */,
 				870EDE9818AF096700F1A5F2 /* Foundation.framework */,
 				870EDEA618AF096700F1A5F2 /* XCTest.framework */,
 				870EDEA918AF096700F1A5F2 /* UIKit.framework */,
@@ -112,6 +123,7 @@
 		870EDE9A18AF096700F1A5F2 /* VCommonSDK */ = {
 			isa = PBXGroup;
 			children = (
+				870EDED918AF128700F1A5F2 /* CustomView */,
 				870EDEC718AF0B4700F1A5F2 /* NSObjective+Category */,
 				870EDE9B18AF096700F1A5F2 /* Supporting Files */,
 			);
@@ -151,6 +163,15 @@
 				870EDEC918AF0B9200F1A5F2 /* NSString+VExtension.m */,
 			);
 			name = "NSObjective+Category";
+			sourceTree = "<group>";
+		};
+		870EDED918AF128700F1A5F2 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				870EDEDD18AF12CC00F1A5F2 /* VProgressHUD.h */,
+				870EDEDE18AF12CC00F1A5F2 /* VProgressHUD.m */,
+			);
+			name = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				870EDEDF18AF12CC00F1A5F2 /* VProgressHUD.m in Sources */,
 				870EDECA18AF0B9200F1A5F2 /* NSString+VExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

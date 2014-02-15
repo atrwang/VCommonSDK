@@ -23,6 +23,8 @@
 		870EDE8318AF081F00F1A5F2 /* VCommonSDKDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 870EDE8218AF081F00F1A5F2 /* VCommonSDKDemoTests.m */; };
 		870EDED418AF0EB200F1A5F2 /* libVCommonSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 870EDEC418AF0A9F00F1A5F2 /* libVCommonSDK.a */; };
 		870EDED618AF0EFA00F1A5F2 /* ReadMe.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 870EDED518AF0EFA00F1A5F2 /* ReadMe.rtf */; };
+		870EDEE718AF4C5300F1A5F2 /* VProgressHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 870EDEE618AF4C5300F1A5F2 /* VProgressHUDViewController.m */; };
+		870EDEEB18AF72F300F1A5F2 /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 870EDEEA18AF72F300F1A5F2 /* test.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,9 @@
 		870EDE8218AF081F00F1A5F2 /* VCommonSDKDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCommonSDKDemoTests.m; sourceTree = "<group>"; };
 		870EDEBE18AF0A9F00F1A5F2 /* VCommonSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = VCommonSDK.xcodeproj; path = ../VCommonSDK/VCommonSDK.xcodeproj; sourceTree = "<group>"; };
 		870EDED518AF0EFA00F1A5F2 /* ReadMe.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = ReadMe.rtf; sourceTree = "<group>"; };
+		870EDEE518AF4C5300F1A5F2 /* VProgressHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VProgressHUDViewController.h; sourceTree = "<group>"; };
+		870EDEE618AF4C5300F1A5F2 /* VProgressHUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VProgressHUDViewController.m; sourceTree = "<group>"; };
+		870EDEEA18AF72F300F1A5F2 /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +150,9 @@
 				870EDE6918AF081F00F1A5F2 /* Main.storyboard */,
 				870EDE6C18AF081F00F1A5F2 /* VViewController.h */,
 				870EDE6D18AF081F00F1A5F2 /* VViewController.m */,
+				870EDEE518AF4C5300F1A5F2 /* VProgressHUDViewController.h */,
+				870EDEE618AF4C5300F1A5F2 /* VProgressHUDViewController.m */,
+				870EDEE918AF72E600F1A5F2 /* Reso */,
 				870EDE6F18AF081F00F1A5F2 /* Images.xcassets */,
 				870EDE5E18AF081F00F1A5F2 /* Supporting Files */,
 			);
@@ -187,6 +195,14 @@
 				870EDEC618AF0A9F00F1A5F2 /* VCommonSDKTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		870EDEE918AF72E600F1A5F2 /* Reso */ = {
+			isa = PBXGroup;
+			children = (
+				870EDEEA18AF72F300F1A5F2 /* test.png */,
+			);
+			name = Reso;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +310,7 @@
 				870EDE6218AF081F00F1A5F2 /* InfoPlist.strings in Resources */,
 				870EDED618AF0EFA00F1A5F2 /* ReadMe.rtf in Resources */,
 				870EDE6B18AF081F00F1A5F2 /* Main.storyboard in Resources */,
+				870EDEEB18AF72F300F1A5F2 /* test.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +331,7 @@
 			files = (
 				870EDE6E18AF081F00F1A5F2 /* VViewController.m in Sources */,
 				870EDE6418AF081F00F1A5F2 /* main.m in Sources */,
+				870EDEE718AF4C5300F1A5F2 /* VProgressHUDViewController.m in Sources */,
 				870EDE6818AF081F00F1A5F2 /* VAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
