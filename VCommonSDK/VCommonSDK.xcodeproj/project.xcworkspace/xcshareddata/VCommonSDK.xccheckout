@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>BAA47622-524D-443E-8CC1-3D1279A6F0E2</string>
+	<key>IDESourceControlProjectName</key>
+	<string>VCommonSDK</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D367E4CF-2D24-4650-905C-0C38BED51471</key>
+		<string>https://github.com/atrwang/VCommonSDK.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>VCommonSDK/VCommonSDK.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D367E4CF-2D24-4650-905C-0C38BED51471</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/atrwang/VCommonSDK.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D367E4CF-2D24-4650-905C-0C38BED51471</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D367E4CF-2D24-4650-905C-0C38BED51471</string>
+			<key>IDESourceControlWCCName</key>
+			<string>VCommonSDK</string>
+		</dict>
+	</array>
+</dict>
+</plist>
