@@ -1,5 +1,5 @@
 //
-//  VCommonSDK.h
+//  NSString+VExtension.h
 //  VCommonSDK
 //
 //  Created by kevin on 2/15/14.
@@ -8,5 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-//NSObjective+Category
-#import "NSString+VExtension.h"
+@interface NSString (VExtension)
+
+
+- (BOOL)hasChineseCharacter;
+
+- (NSString*)trim;
+
+@end

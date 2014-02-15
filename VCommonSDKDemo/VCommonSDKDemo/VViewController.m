@@ -18,6 +18,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    NSString* s = @"abcw王位";
+    
+    if ([s hasChineseCharacter]) {
+        NSLog(@"I have chinese!");
+    }
 }
 
 - (void)didReceiveMemoryWarning

@@ -21,6 +21,7 @@
 		870EDE7918AF081F00F1A5F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870EDE5B18AF081F00F1A5F2 /* UIKit.framework */; };
 		870EDE8118AF081F00F1A5F2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 870EDE7F18AF081F00F1A5F2 /* InfoPlist.strings */; };
 		870EDE8318AF081F00F1A5F2 /* VCommonSDKDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 870EDE8218AF081F00F1A5F2 /* VCommonSDKDemoTests.m */; };
+		870EDED418AF0EB200F1A5F2 /* libVCommonSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 870EDEC418AF0A9F00F1A5F2 /* libVCommonSDK.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +31,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = 870EDE5318AF081F00F1A5F2;
 			remoteInfo = VCommonSDKDemo;
+		};
+		870EDEC318AF0A9F00F1A5F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 870EDEBE18AF0A9F00F1A5F2 /* VCommonSDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 870EDE9518AF096700F1A5F2;
+			remoteInfo = VCommonSDK;
+		};
+		870EDEC518AF0A9F00F1A5F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 870EDEBE18AF0A9F00F1A5F2 /* VCommonSDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 870EDEA518AF096700F1A5F2;
+			remoteInfo = VCommonSDKTests;
+		};
+		870EDED218AF0E8B00F1A5F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 870EDEBE18AF0A9F00F1A5F2 /* VCommonSDK.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 870EDE9418AF096700F1A5F2;
+			remoteInfo = VCommonSDK;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -53,6 +75,7 @@
 		870EDE7E18AF081F00F1A5F2 /* VCommonSDKDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VCommonSDKDemoTests-Info.plist"; sourceTree = "<group>"; };
 		870EDE8018AF081F00F1A5F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		870EDE8218AF081F00F1A5F2 /* VCommonSDKDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCommonSDKDemoTests.m; sourceTree = "<group>"; };
+		870EDEBE18AF0A9F00F1A5F2 /* VCommonSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = VCommonSDK.xcodeproj; path = ../VCommonSDK/VCommonSDK.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				870EDED418AF0EB200F1A5F2 /* libVCommonSDK.a in Frameworks */,
 				870EDE5A18AF081F00F1A5F2 /* CoreGraphics.framework in Frameworks */,
 				870EDE5C18AF081F00F1A5F2 /* UIKit.framework in Frameworks */,
 				870EDE5818AF081F00F1A5F2 /* Foundation.framework in Frameworks */,
@@ -101,6 +125,7 @@
 		870EDE5618AF081F00F1A5F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				870EDEBE18AF0A9F00F1A5F2 /* VCommonSDK.xcodeproj */,
 				870EDE5718AF081F00F1A5F2 /* Foundation.framework */,
 				870EDE5918AF081F00F1A5F2 /* CoreGraphics.framework */,
 				870EDE5B18AF081F00F1A5F2 /* UIKit.framework */,
@@ -152,6 +177,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		870EDEBF18AF0A9F00F1A5F2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				870EDEC418AF0A9F00F1A5F2 /* libVCommonSDK.a */,
+				870EDEC618AF0A9F00F1A5F2 /* VCommonSDKTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -166,6 +200,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				870EDED318AF0E8B00F1A5F2 /* PBXTargetDependency */,
 			);
 			name = VCommonSDKDemo;
 			productName = VCommonSDKDemo;
@@ -216,6 +251,12 @@
 			mainGroup = 870EDE4B18AF081F00F1A5F2;
 			productRefGroup = 870EDE5518AF081F00F1A5F2 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 870EDEBF18AF0A9F00F1A5F2 /* Products */;
+					ProjectRef = 870EDEBE18AF0A9F00F1A5F2 /* VCommonSDK.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				870EDE5318AF081F00F1A5F2 /* VCommonSDKDemo */,
@@ -223,6 +264,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		870EDEC418AF0A9F00F1A5F2 /* libVCommonSDK.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libVCommonSDK.a;
+			remoteRef = 870EDEC318AF0A9F00F1A5F2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		870EDEC618AF0A9F00F1A5F2 /* VCommonSDKTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = VCommonSDKTests.xctest;
+			remoteRef = 870EDEC518AF0A9F00F1A5F2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		870EDE5218AF081F00F1A5F2 /* Resources */ = {
@@ -271,6 +329,11 @@
 			isa = PBXTargetDependency;
 			target = 870EDE5318AF081F00F1A5F2 /* VCommonSDKDemo */;
 			targetProxy = 870EDE7A18AF081F00F1A5F2 /* PBXContainerItemProxy */;
+		};
+		870EDED318AF0E8B00F1A5F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = VCommonSDK;
+			targetProxy = 870EDED218AF0E8B00F1A5F2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -337,6 +400,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -370,6 +434,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
@@ -383,7 +448,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VCommonSDKDemo/VCommonSDKDemo-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"../VCommonSDK/**",
+				);
 				INFOPLIST_FILE = "VCommonSDKDemo/VCommonSDKDemo-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -396,7 +467,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VCommonSDKDemo/VCommonSDKDemo-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"../VCommonSDK/**",
+				);
 				INFOPLIST_FILE = "VCommonSDKDemo/VCommonSDKDemo-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -463,6 +540,7 @@
 				870EDE8818AF081F00F1A5F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		870EDE8918AF081F00F1A5F2 /* Build configuration list for PBXNativeTarget "VCommonSDKDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -471,6 +549,7 @@
 				870EDE8B18AF081F00F1A5F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		870EDE9918AF096700F1A5F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870EDE9818AF096700F1A5F2 /* Foundation.framework */; };
 		870EDE9E18AF096700F1A5F2 /* VCommonSDK.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 870EDE9D18AF096700F1A5F2 /* VCommonSDK.h */; };
-		870EDEA018AF096700F1A5F2 /* VCommonSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 870EDE9F18AF096700F1A5F2 /* VCommonSDK.m */; };
 		870EDEA718AF096700F1A5F2 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870EDEA618AF096700F1A5F2 /* XCTest.framework */; };
 		870EDEA818AF096700F1A5F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870EDE9818AF096700F1A5F2 /* Foundation.framework */; };
 		870EDEAA18AF096700F1A5F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870EDEA918AF096700F1A5F2 /* UIKit.framework */; };
 		870EDEAD18AF096700F1A5F2 /* libVCommonSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 870EDE9518AF096700F1A5F2 /* libVCommonSDK.a */; };
 		870EDEB318AF096700F1A5F2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 870EDEB118AF096700F1A5F2 /* InfoPlist.strings */; };
 		870EDEB518AF096700F1A5F2 /* VCommonSDKTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 870EDEB418AF096700F1A5F2 /* VCommonSDKTests.m */; };
+		870EDECA18AF0B9200F1A5F2 /* NSString+VExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 870EDEC918AF0B9200F1A5F2 /* NSString+VExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +45,15 @@
 		870EDE9518AF096700F1A5F2 /* libVCommonSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libVCommonSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		870EDE9818AF096700F1A5F2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		870EDE9C18AF096700F1A5F2 /* VCommonSDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VCommonSDK-Prefix.pch"; sourceTree = "<group>"; };
-		870EDE9D18AF096700F1A5F2 /* VCommonSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCommonSDK.h; sourceTree = "<group>"; };
-		870EDE9F18AF096700F1A5F2 /* VCommonSDK.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCommonSDK.m; sourceTree = "<group>"; };
+		870EDE9D18AF096700F1A5F2 /* VCommonSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VCommonSDK.h; path = VCommonSDK/VCommonSDK.h; sourceTree = "<group>"; };
 		870EDEA518AF096700F1A5F2 /* VCommonSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VCommonSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		870EDEA618AF096700F1A5F2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		870EDEA918AF096700F1A5F2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		870EDEB018AF096700F1A5F2 /* VCommonSDKTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VCommonSDKTests-Info.plist"; sourceTree = "<group>"; };
 		870EDEB218AF096700F1A5F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		870EDEB418AF096700F1A5F2 /* VCommonSDKTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCommonSDKTests.m; sourceTree = "<group>"; };
+		870EDEC818AF0B9200F1A5F2 /* NSString+VExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+VExtension.h"; sourceTree = "<group>"; };
+		870EDEC918AF0B9200F1A5F2 /* NSString+VExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+VExtension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +82,7 @@
 		870EDE8C18AF096700F1A5F2 = {
 			isa = PBXGroup;
 			children = (
+				870EDE9D18AF096700F1A5F2 /* VCommonSDK.h */,
 				870EDE9A18AF096700F1A5F2 /* VCommonSDK */,
 				870EDEAE18AF096700F1A5F2 /* VCommonSDKTests */,
 				870EDE9718AF096700F1A5F2 /* Frameworks */,
@@ -110,8 +112,7 @@
 		870EDE9A18AF096700F1A5F2 /* VCommonSDK */ = {
 			isa = PBXGroup;
 			children = (
-				870EDE9D18AF096700F1A5F2 /* VCommonSDK.h */,
-				870EDE9F18AF096700F1A5F2 /* VCommonSDK.m */,
+				870EDEC718AF0B4700F1A5F2 /* NSObjective+Category */,
 				870EDE9B18AF096700F1A5F2 /* Supporting Files */,
 			);
 			path = VCommonSDK;
@@ -141,6 +142,15 @@
 				870EDEB118AF096700F1A5F2 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		870EDEC718AF0B4700F1A5F2 /* NSObjective+Category */ = {
+			isa = PBXGroup;
+			children = (
+				870EDEC818AF0B9200F1A5F2 /* NSString+VExtension.h */,
+				870EDEC918AF0B9200F1A5F2 /* NSString+VExtension.m */,
+			);
+			name = "NSObjective+Category";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,7 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				870EDEA018AF096700F1A5F2 /* VCommonSDK.m in Sources */,
+				870EDECA18AF0B9200F1A5F2 /* NSString+VExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +419,7 @@
 				870EDEBA18AF096700F1A5F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		870EDEBB18AF096700F1A5F2 /* Build configuration list for PBXNativeTarget "VCommonSDKTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +428,7 @@
 				870EDEBD18AF096700F1A5F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
