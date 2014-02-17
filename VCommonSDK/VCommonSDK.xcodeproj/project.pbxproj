@@ -19,6 +19,13 @@
 		870EDEDF18AF12CC00F1A5F2 /* VProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 870EDEDE18AF12CC00F1A5F2 /* VProgressHUD.m */; };
 		870EDEE118AF141100F1A5F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870EDEE018AF141100F1A5F2 /* UIKit.framework */; };
 		870EDEE318AF141700F1A5F2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870EDEE218AF141700F1A5F2 /* QuartzCore.framework */; };
+		8779458318B2315A003DB425 /* NSOperationDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8779458218B2315A003DB425 /* NSOperationDownloadOperation.m */; };
+		877945A918B23CAA003DB425 /* GalleryParserOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8779459E18B23CAA003DB425 /* GalleryParserOperation.m */; };
+		877945AA18B23CAA003DB425 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 877945A018B23CAA003DB425 /* NetworkManager.m */; };
+		877945AB18B23CAA003DB425 /* QHTTPOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 877945A218B23CAA003DB425 /* QHTTPOperation.m */; };
+		877945AC18B23CAA003DB425 /* QReachabilityOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 877945A418B23CAA003DB425 /* QReachabilityOperation.m */; };
+		877945AD18B23CAA003DB425 /* QRunLoopOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 877945A618B23CAA003DB425 /* QRunLoopOperation.m */; };
+		877945AE18B23CAA003DB425 /* RetryingHTTPOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 877945A818B23CAA003DB425 /* RetryingHTTPOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +68,20 @@
 		870EDEDE18AF12CC00F1A5F2 /* VProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VProgressHUD.m; sourceTree = "<group>"; };
 		870EDEE018AF141100F1A5F2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		870EDEE218AF141700F1A5F2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8779458118B2315A003DB425 /* NSOperationDownloadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSOperationDownloadOperation.h; sourceTree = "<group>"; };
+		8779458218B2315A003DB425 /* NSOperationDownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSOperationDownloadOperation.m; sourceTree = "<group>"; };
+		8779459D18B23CAA003DB425 /* GalleryParserOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GalleryParserOperation.h; sourceTree = "<group>"; };
+		8779459E18B23CAA003DB425 /* GalleryParserOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GalleryParserOperation.m; sourceTree = "<group>"; };
+		8779459F18B23CAA003DB425 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		877945A018B23CAA003DB425 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		877945A118B23CAA003DB425 /* QHTTPOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHTTPOperation.h; sourceTree = "<group>"; };
+		877945A218B23CAA003DB425 /* QHTTPOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QHTTPOperation.m; sourceTree = "<group>"; };
+		877945A318B23CAA003DB425 /* QReachabilityOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QReachabilityOperation.h; sourceTree = "<group>"; };
+		877945A418B23CAA003DB425 /* QReachabilityOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QReachabilityOperation.m; sourceTree = "<group>"; };
+		877945A518B23CAA003DB425 /* QRunLoopOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRunLoopOperation.h; sourceTree = "<group>"; };
+		877945A618B23CAA003DB425 /* QRunLoopOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRunLoopOperation.m; sourceTree = "<group>"; };
+		877945A718B23CAA003DB425 /* RetryingHTTPOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RetryingHTTPOperation.h; sourceTree = "<group>"; };
+		877945A818B23CAA003DB425 /* RetryingHTTPOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RetryingHTTPOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +144,8 @@
 		870EDE9A18AF096700F1A5F2 /* VCommonSDK */ = {
 			isa = PBXGroup;
 			children = (
+				8779458518B23885003DB425 /* MVCNetworking */,
+				8779458418B23160003DB425 /* SubClass */,
 				870EDED918AF128700F1A5F2 /* CustomView */,
 				870EDEC718AF0B4700F1A5F2 /* NSObjective+Category */,
 				870EDE9B18AF096700F1A5F2 /* Supporting Files */,
@@ -172,6 +195,34 @@
 				870EDEDE18AF12CC00F1A5F2 /* VProgressHUD.m */,
 			);
 			name = CustomView;
+			sourceTree = "<group>";
+		};
+		8779458418B23160003DB425 /* SubClass */ = {
+			isa = PBXGroup;
+			children = (
+				8779458118B2315A003DB425 /* NSOperationDownloadOperation.h */,
+				8779458218B2315A003DB425 /* NSOperationDownloadOperation.m */,
+			);
+			name = SubClass;
+			sourceTree = "<group>";
+		};
+		8779458518B23885003DB425 /* MVCNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				8779459D18B23CAA003DB425 /* GalleryParserOperation.h */,
+				8779459E18B23CAA003DB425 /* GalleryParserOperation.m */,
+				8779459F18B23CAA003DB425 /* NetworkManager.h */,
+				877945A018B23CAA003DB425 /* NetworkManager.m */,
+				877945A118B23CAA003DB425 /* QHTTPOperation.h */,
+				877945A218B23CAA003DB425 /* QHTTPOperation.m */,
+				877945A318B23CAA003DB425 /* QReachabilityOperation.h */,
+				877945A418B23CAA003DB425 /* QReachabilityOperation.m */,
+				877945A518B23CAA003DB425 /* QRunLoopOperation.h */,
+				877945A618B23CAA003DB425 /* QRunLoopOperation.m */,
+				877945A718B23CAA003DB425 /* RetryingHTTPOperation.h */,
+				877945A818B23CAA003DB425 /* RetryingHTTPOperation.m */,
+			);
+			name = MVCNetworking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,8 +306,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8779458318B2315A003DB425 /* NSOperationDownloadOperation.m in Sources */,
+				877945A918B23CAA003DB425 /* GalleryParserOperation.m in Sources */,
+				877945AE18B23CAA003DB425 /* RetryingHTTPOperation.m in Sources */,
 				870EDEDF18AF12CC00F1A5F2 /* VProgressHUD.m in Sources */,
+				877945AA18B23CAA003DB425 /* NetworkManager.m in Sources */,
+				877945AC18B23CAA003DB425 /* QReachabilityOperation.m in Sources */,
 				870EDECA18AF0B9200F1A5F2 /* NSString+VExtension.m in Sources */,
+				877945AB18B23CAA003DB425 /* QHTTPOperation.m in Sources */,
+				877945AD18B23CAA003DB425 /* QRunLoopOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

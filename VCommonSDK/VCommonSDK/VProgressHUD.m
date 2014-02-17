@@ -164,9 +164,18 @@
             [imgV setFrame:CGRectZero];
         }
         
+        CGSize size = CGSizeZero;
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_7_0
+        CGRect stringRect = [message boundingRectWithSize:CGSizeMake(200.0f, 500.0f) options:(NSStringDrawingUsesFontLeading|NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin) attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:16.0f]} context:NULL];
+
+        size = CGSizeMake(stringRect.size.width, stringRect.size.height);
+#else
+        size = [message sizeWithFont:[UIFont systemFontOfSize:16.0f] constrainedToSize:CGSizeMake(200.0f, 500.0f) lineBreakMode:NSLineBreakByWordWrapping];
+#endif
         
-        CGSize size = [message sizeWithFont:[UIFont systemFontOfSize:14.0f] constrainedToSize:CGSizeMake(200.0f, 500.0f) lineBreakMode:NSLinguisticTagWord];
-        
+
+
+
         CGFloat textHight = 0;
         UILabel* textLabel = (UILabel*)[self.hudBgImageView viewWithTag:1212123];
         if (size.width>0 && size.height>0) {//传入了image
@@ -174,7 +183,7 @@
             if (!textLabel) {
                 textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, size.width, textHight)];
                 textLabel.tag = 1212123;
-                textLabel.font = [UIFont systemFontOfSize:14.0f];
+                textLabel.font = [UIFont systemFontOfSize:16.0f];
                 textLabel.textAlignment = NSTextAlignmentCenter;
                 textLabel.textColor = [UIColor whiteColor];
                 [self.hudBgImageView addSubview:textLabel];
