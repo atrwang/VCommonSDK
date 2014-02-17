@@ -237,6 +237,7 @@
 
 @protocol QHTTPOperationDelegate <NSObject>
 
+@optional
 - (void)operation:(QHTTPOperation *)op didSendBodyData:(NSInteger)totalBytesWritten total:(NSInteger)totalBytesExpectedToWrite;
 
 - (void)operation:(QHTTPOperation *)op didReadData:(NSInteger)totalBytesRead total:(NSInteger)totalBytesExpectedToRead;

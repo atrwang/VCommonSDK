@@ -507,7 +507,10 @@
 - (void)connection:(NSURLConnection *)connection   didSendBodyData:(NSInteger)bytesWritten
  totalBytesWritten:(NSInteger)totalBytesWritten
 totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite {
-    [self.delegate operation:self didSendBodyData:totalBytesWritten total:totalBytesExpectedToWrite];
+    if ([self.delegate respondsToSelector:@selector(operation:didSendBodyData:total:)]) {
+         [self.delegate operation:self didSendBodyData:totalBytesWritten total:totalBytesExpectedToWrite];
+    }
+   
 }
 
 
@@ -616,8 +619,10 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite {
             }
         }
         
-        NSUInteger contentLen = [[self.lastResponse.allHeaderFields valueForKey:@"Content-Length"] integerValue];
-        [self.delegate operation:self didReadData:self.dataAccumulator.length total:contentLen];
+        if ([self.delegate respondsToSelector:@selector(operation:didReadData:total:)]) {
+            NSUInteger contentLen = [[self.lastResponse.allHeaderFields valueForKey:@"Content-Length"] integerValue];
+            [self.delegate operation:self didReadData:self.dataAccumulator.length total:contentLen];
+        }
     }
 }
 

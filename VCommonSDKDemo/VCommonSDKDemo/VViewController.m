@@ -7,14 +7,16 @@
 //
 
 #import "VViewController.h"
+#import "QHTTPOperation.h"
 
-@interface VViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface VViewController ()<UITableViewDataSource,UITableViewDelegate,QHTTPOperationDelegate>
 {
 
     long long dataCount;
 }
 
 @property (strong,nonatomic) NSURLConnection* connection;
+@property (strong,nonatomic) QHTTPOperation* operation;
 
 @end
 
@@ -31,8 +33,21 @@
         NSLog(@"I have chinese!");
     }
     
-    self.connection = [NSURLConnection connectionWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://devthrift.plaso.cn/conf_record/771_411908955.ilbc"]] delegate:self];
-    [self.connection start];
+//    self.connection = [NSURLConnection connectionWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://devthrift.plaso.cn/conf_record/771_411908955.ilbc"]] delegate:self];
+//    [self.connection start];
+    
+    self.operation = [[QHTTPOperation alloc] initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://devthrift.plaso.cn/conf_record/771_411908955.ilbc"]]];
+    self.operation.delegate = self;
+    
+    [[NSOperationQueue mainQueue] addOperation:self.operation];
+}
+
+- (void)operation:(QHTTPOperation *)op didSendBodyData:(NSInteger)totalBytesWritten total:(NSInteger)totalBytesExpectedToWrite{
+    NSLog(@"send: %ld %ld",(long)totalBytesExpectedToWrite,(long)totalBytesWritten);
+}
+
+- (void)operation:(QHTTPOperation *)op didReadData:(NSInteger)totalBytesRead total:(NSInteger)totalBytesExpectedToRead{
+    NSLog(@"receive: %ld %ld",(long)totalBytesRead,(long)totalBytesExpectedToRead);
 }
 
 - (void)didReceiveMemoryWarning
