@@ -86,14 +86,19 @@
     assert([[[[request URL] scheme] lowercaseString] isEqual:@"http"] || [[[[request URL] scheme] lowercaseString] isEqual:@"https"]);
     self = [super init];
     if (self != nil) {
-        #if TARGET_OS_EMBEDDED || TARGET_IPHONE_SIMULATOR
-            static const NSUInteger kPlatformReductionFactor = 4;
-        #else
-            static const NSUInteger kPlatformReductionFactor = 1;
-        #endif
+//        #if TARGET_OS_EMBEDDED || TARGET_IPHONE_SIMULATOR
+//            static const NSUInteger kPlatformReductionFactor = 4;
+//        #else
+//            static const NSUInteger kPlatformReductionFactor = 1;
+//        #endif
+//        self->_request = [request copy];
+//        self->_defaultResponseSize = 1 * 1024 * 1024 / kPlatformReductionFactor;
+//        self->_maximumResponseSize = 4 * 1024 * 1024 / kPlatformReductionFactor;
+//        self->_firstData = YES;
+        
         self->_request = [request copy];
-        self->_defaultResponseSize = 1 * 1024 * 1024 / kPlatformReductionFactor;
-        self->_maximumResponseSize = 4 * 1024 * 1024 / kPlatformReductionFactor;
+        self->_defaultResponseSize = 1 * 1024 * 1024;
+        self->_maximumResponseSize = INT32_MAX;
         self->_firstData = YES;
     }
     return self;
@@ -499,6 +504,14 @@
     return request;
 }
 
+- (void)connection:(NSURLConnection *)connection   didSendBodyData:(NSInteger)bytesWritten
+ totalBytesWritten:(NSInteger)totalBytesWritten
+totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite {
+    [self.delegate operation:self didSendBodyData:totalBytesWritten total:totalBytesExpectedToWrite];
+}
+
+
+
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
     // See comment in header.
 {
@@ -602,6 +615,9 @@
                 [self finishWithError:error];
             }
         }
+        
+        NSUInteger contentLen = [[self.lastResponse.allHeaderFields valueForKey:@"Content-Length"] integerValue];
+        [self.delegate operation:self didReadData:self.dataAccumulator.length total:contentLen];
     }
 }
 

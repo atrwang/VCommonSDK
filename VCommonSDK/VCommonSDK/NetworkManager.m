@@ -55,7 +55,6 @@
 
 #import "QHTTPOperation.h"
 
-#import "Logging.h"
 
 @interface NetworkManager ()
 
@@ -138,9 +137,7 @@
         assert(self->_networkRunLoopThread != nil);
 
         [self->_networkRunLoopThread setName:@"networkRunLoopThread"];
-        if ( [self->_networkRunLoopThread respondsToSelector:@selector(setThreadPriority)] ) {
-            [self->_networkRunLoopThread setThreadPriority:0.3];
-        }
+        [self->_networkRunLoopThread setThreadPriority:0.3];
 
         [self->_networkRunLoopThread start];
     }
@@ -200,6 +197,7 @@
         [[NSRunLoop currentRunLoop] run];
 
         [pool drain];
+        [NSThread sleepForTimeInterval:0.01f];//sleep for a while to avoid high CPU usage.
     }
     assert(NO);
 }
@@ -395,10 +393,16 @@
             
             [thread release];
 
-            if (queue == self.queueForNetworkTransfers) {
-                [self performSelectorOnMainThread:@selector(decrementRunningNetworkTransferCount) withObject:nil waitUntilDone:NO];
-            }
         }
+        
+        //when cancel operation via -cancelOperation, the operation-thread pair may be removed before it is retrieved from
+        //operation-thread map, so the -decrementRunningNetworkTransferCount may be skipped.
+        //I moved it if (thread != nil) {} outside to make sure -decrementRunningNetworkTransferCount get called whenever
+        //the operation finished.
+        if (queue == self.queueForNetworkTransfers) {
+            [self performSelectorOnMainThread:@selector(decrementRunningNetworkTransferCount) withObject:nil waitUntilDone:NO];
+        }
+        
     } else if (NO) {   // Disabled because the super class does nothing useful with it.
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }

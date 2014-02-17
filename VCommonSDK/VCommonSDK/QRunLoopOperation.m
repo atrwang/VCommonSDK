@@ -142,6 +142,7 @@ XXX  7. init -> start -> cancel -> startOnRunLoopThreadThread -> cancelOnRunLoop
     [self->_runLoopModes release];
     [self->_runLoopThread release];
     [self->_error release];
+    self.userInfo = nil;
     [super dealloc];
 }
 
@@ -201,7 +202,11 @@ XXX  7. init -> start -> cancel -> startOnRunLoopThreadThread -> cancelOnRunLoop
         // should be no redundant changes to the state (that is, newState must never be 
         // equal to self->_state).
         
-        assert(newState > self->_state);
+      //  assert(newState > self->_state);
+        
+        if (newState <= self->_state) {
+            NSLog(@"Illigal status of operation received while changing status.");
+        }
 
         // Transitions from executing to finished must be done on the run loop thread.
         

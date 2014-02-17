@@ -108,6 +108,8 @@
 
 @protocol QHTTPOperationAuthenticationDelegate;
 
+@protocol QHTTPOperationDelegate;
+
 @interface QHTTPOperation : QRunLoopOperation /* <NSURLConnectionDelegate> */
 {
     NSURLRequest *      _request;
@@ -144,6 +146,8 @@
 @property (copy,   readwrite) NSIndexSet *          acceptableStatusCodes;  // default is nil, implying 200..299
 @property (copy,   readwrite) NSSet *               acceptableContentTypes; // default is nil, implying anything is acceptable
 @property (assign, readwrite) id<QHTTPOperationAuthenticationDelegate>  authenticationDelegate;
+
+@property (assign, readwrite) id<QHTTPOperationDelegate> delegate;
 
 #if ! defined(NDEBUG)
 @property (copy,   readwrite) NSError *             debugError;             // default is nil
@@ -229,6 +233,16 @@
 - (void)httpOperation:(QHTTPOperation *)operation didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
 
 @end
+
+
+@protocol QHTTPOperationDelegate <NSObject>
+
+- (void)operation:(QHTTPOperation *)op didSendBodyData:(NSInteger)totalBytesWritten total:(NSInteger)totalBytesExpectedToWrite;
+
+- (void)operation:(QHTTPOperation *)op didReadData:(NSInteger)totalBytesRead total:(NSInteger)totalBytesExpectedToRead;
+
+@end
+
 
 extern NSString * kQHTTPOperationErrorDomain;
 

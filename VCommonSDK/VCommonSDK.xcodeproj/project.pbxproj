@@ -20,12 +20,12 @@
 		870EDEE118AF141100F1A5F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870EDEE018AF141100F1A5F2 /* UIKit.framework */; };
 		870EDEE318AF141700F1A5F2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870EDEE218AF141700F1A5F2 /* QuartzCore.framework */; };
 		8779458318B2315A003DB425 /* NSOperationDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8779458218B2315A003DB425 /* NSOperationDownloadOperation.m */; };
-		877945A918B23CAA003DB425 /* GalleryParserOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8779459E18B23CAA003DB425 /* GalleryParserOperation.m */; };
-		877945AA18B23CAA003DB425 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 877945A018B23CAA003DB425 /* NetworkManager.m */; };
-		877945AB18B23CAA003DB425 /* QHTTPOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 877945A218B23CAA003DB425 /* QHTTPOperation.m */; };
-		877945AC18B23CAA003DB425 /* QReachabilityOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 877945A418B23CAA003DB425 /* QReachabilityOperation.m */; };
-		877945AD18B23CAA003DB425 /* QRunLoopOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 877945A618B23CAA003DB425 /* QRunLoopOperation.m */; };
-		877945AE18B23CAA003DB425 /* RetryingHTTPOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 877945A818B23CAA003DB425 /* RetryingHTTPOperation.m */; };
+		877945A918B23CAA003DB425 /* GalleryParserOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8779459E18B23CAA003DB425 /* GalleryParserOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		877945AA18B23CAA003DB425 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 877945A018B23CAA003DB425 /* NetworkManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		877945AB18B23CAA003DB425 /* QHTTPOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 877945A218B23CAA003DB425 /* QHTTPOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		877945AC18B23CAA003DB425 /* QReachabilityOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 877945A418B23CAA003DB425 /* QReachabilityOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		877945AD18B23CAA003DB425 /* QRunLoopOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 877945A618B23CAA003DB425 /* QRunLoopOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		877945AE18B23CAA003DB425 /* RetryingHTTPOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 877945A818B23CAA003DB425 /* RetryingHTTPOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */

@@ -87,6 +87,8 @@ typedef enum QRunLoopOperationState QRunLoopOperationState;
 @property (assign, readonly ) BOOL                      isActualRunLoopThread;  // YES if the current thread is the actual run loop thread
 @property (copy,   readonly ) NSSet *                   actualRunLoopModes;     // set containing NSDefaultRunLoopMode if runLoopModes is nil or empty, runLoopModes otherwise
 
+@property (nonatomic, retain) NSDictionary *        userInfo;
+
 @end
 
 @interface QRunLoopOperation (SubClassSupport)

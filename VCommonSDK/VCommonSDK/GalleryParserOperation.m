@@ -53,7 +53,6 @@
 
 #import "GalleryParserOperation.h"
 
-#import "Logging.h"
 
 #include <xlocale.h>                                    // for strptime_l
 
@@ -155,8 +154,6 @@
     self.parser.delegate = self;
     
     // Do the parse.
-
-    [[QLog log] logOption:kLogOptionXMLParseDetails withFormat:@"xml parse start"];
     
     success = [self.parser parse];
     if ( ! success ) {
@@ -194,11 +191,8 @@
     #endif
 
     if (self.error == nil) {
-        [[QLog log] logOption:kLogOptionXMLParseDetails withFormat:@"xml parse success"];
-    } else {
-        [[QLog log] logOption:kLogOptionXMLParseDetails withFormat:@"xml parse failed %@", self.error];
+        NSLog(@"%@",self.error);
     }
-    
     self.parser = nil;
 }
 
@@ -255,25 +249,25 @@
         if (tmpStr != nil) {
             date = [[self class] dateFromDateString:tmpStr];
             if (date == nil) {
-                [[QLog log] logOption:kLogOptionXMLParseDetails withFormat:@"xml parse photo date error '%@'", tmpStr];
+
             }
         }
 
         if ( (photoID == nil) || ([photoID length] == 0) ) {
-            [[QLog log] logOption:kLogOptionXMLParseDetails withFormat:@"xml parse photo skipped, missing 'id'"];
+
         } else if ( (name == nil) || ([name length] == 0) ) {
-            [[QLog log] logOption:kLogOptionXMLParseDetails withFormat:@"xml parse photo skipped, missing 'name'"];
+
         } else if (date == nil) {
-            [[QLog log] logOption:kLogOptionXMLParseDetails withFormat:@"xml parse photo skipped, missing 'date'"];
+
         } else {
-            [[QLog log] logOption:kLogOptionXMLParseDetails withFormat:@"xml parse photo start %@", photoID];
+
             [self.itemProperties setObject:photoID forKey:kGalleryParserResultPhotoID];
             [self.itemProperties setObject:name    forKey:kGalleryParserResultName];
             [self.itemProperties setObject:date    forKey:kGalleryParserResultDate];
         }
     } else if ( [elementName isEqual:@"image"] ) {
         if ( [self.itemProperties count] == 0 ) {
-            [[QLog log] logOption:kLogOptionXMLParseDetails withFormat:@"xml parse photo image skipped, out of context"];
+
         } else {
             NSString *  kindStr;
             NSString *  srcURLStr;
@@ -285,10 +279,10 @@
             srcURLStr = [attributeDict objectForKey:@"srcURL"];
             if ( (srcURLStr != nil) && ([srcURLStr length] != 0) ) {
                 if ( [kindStr isEqual:@"image"] ) {
-                    [[QLog log] logOption:kLogOptionXMLParseDetails withFormat:@"xml parse photo image '%@'", srcURLStr];
+
                     [self.itemProperties setObject:srcURLStr forKey:kGalleryParserResultPhotoPath];
                 } else if ( [kindStr isEqual:@"thumbnail"] ) {
-                    [[QLog log] logOption:kLogOptionXMLParseDetails withFormat:@"xml parse photo thumbnail '%@'", srcURLStr];
+
                     [self.itemProperties setObject:srcURLStr forKey:kGalleryParserResultThumbnailPath];
                 }
             }
@@ -308,19 +302,18 @@
     
     if ( [elementName isEqual:@"photo"] ) {
         if ([self.itemProperties count] == 0) {
-            [[QLog log] logOption:kLogOptionXMLParseDetails withFormat:@"xml parse photo skipped, out of context"];
+
         } else {
             if ([self.itemProperties objectForKey:kGalleryParserResultPhotoPath] == nil) {
-                [[QLog log] logOption:kLogOptionXMLParseDetails withFormat:@"xml parse photo skipped, missing image"];
+
             } else if ([self.itemProperties objectForKey:kGalleryParserResultThumbnailPath] == nil) {
-                [[QLog log] logOption:kLogOptionXMLParseDetails withFormat:@"xml parse photo skipped, missing thumbnail"];
+
             } else {
                 assert([[self.itemProperties objectForKey:kGalleryParserResultPhotoID      ] isKindOfClass:[NSString class]]);
                 assert([[self.itemProperties objectForKey:kGalleryParserResultName         ] isKindOfClass:[NSString class]]);
                 assert([[self.itemProperties objectForKey:kGalleryParserResultDate         ] isKindOfClass:[NSDate   class]]);
                 assert([[self.itemProperties objectForKey:kGalleryParserResultPhotoPath    ] isKindOfClass:[NSString class]]);
                 assert([[self.itemProperties objectForKey:kGalleryParserResultThumbnailPath] isKindOfClass:[NSString class]]);
-                [[QLog log] logOption:kLogOptionXMLParseDetails withFormat:@"xml parse photo success %@", [self.itemProperties objectForKey:kGalleryParserResultPhotoID]];
                 [self.mutableResults addObject:[[self.itemProperties copy] autorelease]];
                 [self.itemProperties removeAllObjects];
             }
