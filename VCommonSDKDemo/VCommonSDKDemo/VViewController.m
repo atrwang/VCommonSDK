@@ -9,6 +9,12 @@
 #import "VViewController.h"
 
 @interface VViewController ()<UITableViewDataSource,UITableViewDelegate>
+{
+
+    long long dataCount;
+}
+
+@property (strong,nonatomic) NSURLConnection* connection;
 
 @end
 
@@ -24,6 +30,9 @@
     if ([s hasChineseCharacter]) {
         NSLog(@"I have chinese!");
     }
+    
+    self.connection = [NSURLConnection connectionWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://devthrift.plaso.cn/conf_record/771_411908955.ilbc"]] delegate:self];
+    [self.connection start];
 }
 
 - (void)didReceiveMemoryWarning
@@ -91,6 +100,38 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
         default:
             break;
     }
+}
+
+
+#pragma NSURLConnectionDelegate
+
+- (NSURLRequest *)connection:(NSURLConnection *)connection willSendRequest:(NSURLRequest *)request redirectResponse:(NSURLResponse *)response{
+
+    return request;
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
+    dataCount = 0;
+    NSLog(@"didReceiveResponse  %lld",[response expectedContentLength]);
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
+
+    dataCount += [data length];
+        NSLog(@"didReceiveData  %d",[data length]);
+}
+
+
+- (void)connection:(NSURLConnection *)connection   didSendBodyData:(NSInteger)bytesWritten
+ totalBytesWritten:(NSInteger)totalBytesWritten
+totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite{
+
+}
+
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection{
+
+        NSLog(@"connectionDidFinishLoading  dataLength: %lld",dataCount);
 }
 
 @end
