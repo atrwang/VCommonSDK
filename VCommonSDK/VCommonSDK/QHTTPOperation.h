@@ -166,7 +166,7 @@
 
 @property (retain, readwrite) NSOutputStream *      responseOutputStream;   // defaults to nil, which puts response into responseBody
 @property (assign, readwrite) NSUInteger            defaultResponseSize;    // default is 1 MB, ignored if responseOutputStream is set
-@property (assign, readwrite) NSUInteger            maximumResponseSize;    // default is 4 MB, ignored if responseOutputStream is set
+@property (assign, readwrite) NSUInteger            maximumResponseSize;    // default is Not limited, ignored if responseOutputStream is set
                                                                             // defaults are 1/4 of the above on embedded
 
 // Things that are only meaningful after a response has been received;
@@ -238,9 +238,9 @@
 @protocol QHTTPOperationDelegate <NSObject>
 
 @optional
-- (void)operation:(QHTTPOperation *)op didSendBodyData:(NSInteger)totalBytesWritten total:(NSInteger)totalBytesExpectedToWrite;
+- (void)operation:(QHTTPOperation *)op didSendBodyData:(long long)totalBytesWritten total:(long long)totalBytesExpectedToWrite;
 
-- (void)operation:(QHTTPOperation *)op didReadData:(NSInteger)totalBytesRead total:(NSInteger)totalBytesExpectedToRead;
+- (void)operation:(QHTTPOperation *)op didReadData:(long long)totalBytesRead total:(long long)totalBytesExpectedToRead;
 
 @end
 

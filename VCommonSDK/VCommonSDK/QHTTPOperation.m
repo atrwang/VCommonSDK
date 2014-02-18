@@ -620,7 +620,8 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite {
         }
         
         if ([self.delegate respondsToSelector:@selector(operation:didReadData:total:)]) {
-            NSUInteger contentLen = [[self.lastResponse.allHeaderFields valueForKey:@"Content-Length"] integerValue];
+            //NSUInteger contentLen = [[self.lastResponse.allHeaderFields valueForKey:@"Content-Length"] integerValue];
+            long long contentLen = [self.lastResponse expectedContentLength];
             [self.delegate operation:self didReadData:self.dataAccumulator.length total:contentLen];
         }
     }
