@@ -33,20 +33,19 @@
         NSLog(@"I have chinese!");
     }
     
-//    self.connection = [NSURLConnection connectionWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://devthrift.plaso.cn/conf_record/771_411908955.ilbc"]] delegate:self];
-//    [self.connection start];
-    
-    self.operation = [[QHTTPOperation alloc] initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://devthrift.plaso.cn/conf_record/771_411908955.ilbc"]]];
+
+   //Asyn download
+    self.operation = [[QHTTPOperation alloc] initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.fecoo.com/bestwallpapers/1366x768/free-download-high-definition-apple-logo-wallpaper-for-iphone-download-60553.html"]]];
     self.operation.delegate = self;
     
     [[NSOperationQueue mainQueue] addOperation:self.operation];
 }
 
-- (void)operation:(QHTTPOperation *)op didSendBodyData:(NSInteger)totalBytesWritten total:(NSInteger)totalBytesExpectedToWrite{
+- (void)operation:(QHTTPOperation *)op didSendBodyData:(long long)totalBytesWritten total:(long long)totalBytesExpectedToWrite{
     NSLog(@"send: %ld %ld",(long)totalBytesExpectedToWrite,(long)totalBytesWritten);
 }
 
-- (void)operation:(QHTTPOperation *)op didReadData:(NSInteger)totalBytesRead total:(NSInteger)totalBytesExpectedToRead{
+- (void)operation:(QHTTPOperation *)op didReadData:(long long)totalBytesRead total:(long long)totalBytesExpectedToRead{
     NSLog(@"receive: %ld %ld",(long)totalBytesRead,(long)totalBytesExpectedToRead);
 }
 
