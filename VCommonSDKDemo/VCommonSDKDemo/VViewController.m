@@ -65,7 +65,7 @@
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -92,6 +92,12 @@
             cell.textLabel.text = @"VProgressHUD";
         }
             break;
+        case 1: //Drag and auto increase UITextView
+        {
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            cell.textLabel.text = @"Drag and auto increase UITextView";
+        }
+            break;
             
         default:
             break;
@@ -108,6 +114,12 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
         {
             [tableView deselectRowAtIndexPath:indexPath animated:YES];
             [self performSegueWithIdentifier:@"pushToVProgressHUD" sender:self];
+        }
+            break;
+        case 1://Drag and auto increase UITextView
+        {
+            [tableView deselectRowAtIndexPath:indexPath animated:YES];
+            [self performSegueWithIdentifier:@"pushToDragAndAutoIncreaseUITextView" sender:self];
         }
             break;
             

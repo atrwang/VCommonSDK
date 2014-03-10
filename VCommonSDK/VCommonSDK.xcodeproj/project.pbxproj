@@ -26,6 +26,7 @@
 		877945AC18B23CAA003DB425 /* QReachabilityOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 877945A418B23CAA003DB425 /* QReachabilityOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		877945AD18B23CAA003DB425 /* QRunLoopOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 877945A618B23CAA003DB425 /* QRunLoopOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		877945AE18B23CAA003DB425 /* RetryingHTTPOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 877945A818B23CAA003DB425 /* RetryingHTTPOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		879D535A18C895EC00EC1762 /* MoveableTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 879D535918C895EC00EC1762 /* MoveableTextView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,8 @@
 		877945A618B23CAA003DB425 /* QRunLoopOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRunLoopOperation.m; sourceTree = "<group>"; };
 		877945A718B23CAA003DB425 /* RetryingHTTPOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RetryingHTTPOperation.h; sourceTree = "<group>"; };
 		877945A818B23CAA003DB425 /* RetryingHTTPOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RetryingHTTPOperation.m; sourceTree = "<group>"; };
+		879D535818C895EC00EC1762 /* MoveableTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveableTextView.h; sourceTree = "<group>"; };
+		879D535918C895EC00EC1762 /* MoveableTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveableTextView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +196,8 @@
 			children = (
 				870EDEDD18AF12CC00F1A5F2 /* VProgressHUD.h */,
 				870EDEDE18AF12CC00F1A5F2 /* VProgressHUD.m */,
+				879D535818C895EC00EC1762 /* MoveableTextView.h */,
+				879D535918C895EC00EC1762 /* MoveableTextView.m */,
 			);
 			name = CustomView;
 			sourceTree = "<group>";
@@ -306,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				879D535A18C895EC00EC1762 /* MoveableTextView.m in Sources */,
 				8779458318B2315A003DB425 /* NSOperationDownloadOperation.m in Sources */,
 				877945A918B23CAA003DB425 /* GalleryParserOperation.m in Sources */,
 				877945AE18B23CAA003DB425 /* RetryingHTTPOperation.m in Sources */,
@@ -424,6 +430,7 @@
 				DSTROOT = /tmp/VCommonSDK.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VCommonSDK/VCommonSDK-Prefix.pch";
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -436,6 +443,7 @@
 				DSTROOT = /tmp/VCommonSDK.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VCommonSDK/VCommonSDK-Prefix.pch";
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
